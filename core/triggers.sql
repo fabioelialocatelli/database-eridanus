@@ -1,8 +1,8 @@
 /**
 * @author FABIO ELIA LOCATELLI
-* @studentID 2143701
-* @revisionDate 11/10/2016
-* @purpose UTILITY FUNCTIONS COLLECTION
+* @creationDate 08/12/2016
+* @revisionDate 20/02/2018
+* @purpose TRIGGERS LIBRARY
 *-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 DELIMITER $$
@@ -74,8 +74,7 @@ BEGIN
 		THEN
 			SET riverName := NEW.localName;
 			SET exceptionMessage := CONCAT(riverName, ' already exists in database...');
-			SIGNAL SQLSTATE '23000'
-				SET MESSAGE_TEXT = exceptionMessage;
+			SIGNAL SQLSTATE '23000' SET MESSAGE_TEXT = exceptionMessage;
 		END IF;
 END$$
 DELIMITER ;
@@ -93,8 +92,7 @@ BEGIN
 		THEN
 			SET riverName := NEW.localName;
 			SET exceptionMessage := CONCAT(riverName, ' not existing in main table...');
-			SIGNAL SQLSTATE '23000'
-				SET MESSAGE_TEXT = exceptionMessage;
+			SIGNAL SQLSTATE '23000' SET MESSAGE_TEXT = exceptionMessage;
 		END IF;
 END$$
 DELIMITER ;

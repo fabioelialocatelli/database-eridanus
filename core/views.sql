@@ -1,8 +1,8 @@
 /**
 * @author FABIO ELIA LOCATELLI
 * @creationDate 08/12/2016
-* @revisionDate 08/12/2016
-* @purpose VIEWS COLLECTION
+* @revisionDate 20/02/2018
+* @purpose VIEWS LIBRARY
 *------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 USE eridanus;

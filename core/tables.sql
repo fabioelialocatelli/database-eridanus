@@ -1,3 +1,10 @@
+/**
+* @author FABIO ELIA LOCATELLI
+* @creationDate 08/12/2016
+* @revisionDate 20/02/2018
+* @purpose DATA DEFINITION SCRIPT
+*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 CREATE DATABASE IF NOT EXISTS eridanus;
 USE eridanus ;
 

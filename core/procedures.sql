@@ -1,8 +1,8 @@
 /**
 * @author FABIO ELIA LOCATELLI
 * @creationDate 08/12/2016
-* @revisionDate 08/12/2016
-* @purpose STORED PROCEDURES COLLECTION
+* @revisionDate 20/02/2018
+* @purpose PROCEDURES LIBRARY
 *---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 USE eridanus;
@@ -43,11 +43,11 @@ BEGIN
 			/*CURSOR OPENING, RETRIEVAL LOOP AND CURSOR CLOSING*/    
 			OPEN riverRow;
 
-			TRIPLOOP: LOOP
+			RIVERLOOP: LOOP
 				FETCH riverRow INTO fetchedRiverName, fetchedAverageDischarge, fetchedCatchmentBasin, fetchedLength;
 				IF cursorHasFinished
 				THEN
-				  LEAVE TRIPLOOP;
+				  LEAVE RIVERLOOP;
 				END IF;
 				INSERT INTO cursorTable(riverName, averageDischarge, catchmentBasin, length) VALUES (fetchedRiverName, fetchedAverageDischarge, fetchedCatchmentBasin, fetchedLength);		
 			  END LOOP;
@@ -76,11 +76,11 @@ BEGIN
 			/*CURSOR OPENING, RETRIEVAL LOOP AND CURSOR CLOSING*/    
 			OPEN riverRow;
 
-			TRIPLOOP: LOOP
+			RIVERLOOP: LOOP
 				FETCH riverRow INTO fetchedRiverName, fetchedAverageDischarge, fetchedCatchmentBasin, fetchedLength, fetchedCountryName;
 				IF cursorHasFinished
 				THEN
-				  LEAVE TRIPLOOP;
+				  LEAVE RIVERLOOP;
 				END IF;
 				INSERT INTO cursorTable(riverName, averageDischarge, catchmentBasin, length, country) VALUES (fetchedRiverName, fetchedAverageDischarge, fetchedCatchmentBasin, fetchedLength, fetchedCountryName);		
 			  END LOOP;
